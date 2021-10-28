@@ -1,0 +1,30 @@
+
+h1{
+  text-align: center;
+}
+input {
+	width: 100%;
+
+  display: block;
+
+
+}
+form{
+  margin: auto;
+  width: 30%;
+  border: 3px solid purple;
+  padding: 10px;
+}
+
+button, input[type=button]{
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	padding: 4px 7px;
+	text-decoration: none;
+	margin: 2px 1px;
+	cursor: pointer;
+}
+.add{
+
+}

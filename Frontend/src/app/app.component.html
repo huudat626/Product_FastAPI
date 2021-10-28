@@ -1,0 +1,48 @@
+<!-- NG-ZORRO -->
+<!-- NG-ZORRO -->
+<h1>Product Management System</h1>
+
+<div *ngIf="!show ;else name"></div>
+<button class="add" (click)="add()" value="Create or Update Product" > Add Product</button>
+<ng-template #name>
+  <form #f="ngForm" >
+
+      <label>Name</label>
+      <input type="text" name="name"  [(ngModel)]="selectedProduct.name " Method="put">
+      <br>
+      <label>Price</label>
+      <input type="text" name="price" [(ngModel)]="selectedProduct.price">
+      <br>
+      <label>description</label>
+      <input type="text" name="description" [(ngModel)]="selectedProduct.description">
+      <input type="button" (click)="createOrUpdate(f)" value="Create or Update Product" >
+  </form>
+  <br />
+</ng-template>
+<nz-table *ngIf="products" #middleTable [nzData]="products">
+  <thead>
+      <tr>
+          <th></th>
+          <th>#</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Description</th>
+          <th></th>
+
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let item of middleTable.data">
+
+          <td></td>
+          <td>{{ item._id }}</td>
+          <td>{{ item.name}}</td>
+          <td>{{ item.price}}</td>
+          <td>{{ item.description }}</td>
+
+        <td><button (click)="select(item)">Edit</button>
+
+          <button id="del" (click)="deletemploy(item._id)">Delete</button></td>
+
+  </tbody>
+</nz-table>

@@ -35,7 +35,7 @@ async def shutdown_db_client():
     app.mongodb_client.close()
 
 
-app.include_router(todo_router, tags=["categories"], prefix="/categories")
+app.include_router(todo_router, tags=["product"], prefix="/product")
 
 
 @app.get("/", tags=["root"])

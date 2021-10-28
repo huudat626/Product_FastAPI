@@ -3,10 +3,11 @@ import uuid
 from pydantic import BaseModel, Field
 
 
-class CategoriesModel(BaseModel):
+class ProductsModel(BaseModel):
     id: str = Field(default_factory=uuid.uuid4, alias="_id")
     name: str = Field(...)
     description: str = Field(...)
+    price: str = Field(...)
     # completed: bool = False
 
     class Config:
@@ -15,11 +16,12 @@ class CategoriesModel(BaseModel):
             "example": {
                 "name": "Motors",
                 "description": "Motor sports and more",
+                "price": 50000
             }
         }
 
 
-class UpdateCategoriesModel(BaseModel):
+class UpdateProductsModel(BaseModel):
     name: Optional[str]
     description: Optional[str]
 
@@ -27,6 +29,7 @@ class UpdateCategoriesModel(BaseModel):
         schema_extra = {
             "example": {
                 "name": "Learn FARM Stack",
-                "completed": "Motor sports and more",
+                "description": "Motor sports and more",
+                "price": 60000,
             }
         }
