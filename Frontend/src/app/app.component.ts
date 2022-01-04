@@ -43,7 +43,7 @@ export class AppComponent {
       "description" :this.selectedProduct.description,
       "price" : this.selectedProduct.price,
       //
-
+//
 
     };
     if (this.flagSelected) {
