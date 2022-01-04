@@ -42,6 +42,7 @@ export class AppComponent {
       "name" : this.selectedProduct.name,
       "description" :this.selectedProduct.description,
       "price" : this.selectedProduct.price,
+      //
 
 
     };
